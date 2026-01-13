@@ -67,5 +67,5 @@ function listFiles(dir, indent = '') {
   }
 }
 
-console.log('🚀 Travel Planner Project Structure:\n');
+console.log('🚀 Clothing Planner Project Structure:\n');
 listFiles('.');
