@@ -3,23 +3,24 @@ export interface ClothingItem {
   id: string;
   name: string;
   category: string;
+  subcategory?: string; // NEW: For better organization
   compatibleFabrics: string[];
   description: string;
   bestContexts: string[];
   
   // Optional fields
   brand?: string;
-  priceRange?: '$' | '$$' | '$$$' | '$$$$';
+  priceRange?: '$' | '$$' | '$$$' | '$$$$' | '$$$$$';
   sustainability?: 'low' | 'medium' | 'high';
   material?: string;
   waterResistance?: 'None' | 'Light' | 'Medium' | 'High' | 'Waterproof';
   insulation?: 'None' | 'Light' | 'Medium' | 'Heavy';
   durability?: 'Low' | 'Medium' | 'High' | 'Very High';
-  weight?: 'Light' | 'Medium' | 'Heavy';
+  weight?: 'Light' | 'Medium' | 'Heavy' | 'Very Heavy';
   seasonality?: string[];
   features?: string[];
   
-  // Trend-related fields
+  // Trend & evolution
   trending?: boolean;
   trendingScore?: number;
   trendSeason?: string;
@@ -30,13 +31,21 @@ export interface ClothingItem {
   season?: 'All' | 'Spring' | 'Summer' | 'Fall' | 'Winter';
   trendingStyles?: string[];
   
-  // Additional optional fields
-  sleeveLength?: 'short' | 'long' | 'sleeveless';
-  legLength?: 'short' | 'full';
-  isTravelSuitable?: boolean;
-  era?: 'vintage' | 'classic' | 'modern';
+  // NEW: Evolution and history
+  era?: 'vintage' | 'retro' | 'classic' | 'modern' | 'futuristic';
+  yearIntroduced?: number;
+  evolutionNotes?: string;
+  
+  // NEW: Color and variations
+  colorOptions?: string[];
+  patternOptions?: string[];
+  
+  // Specific to costumes
   inspiredBy?: string;
   costumeType?: string;
+  
+  // Specific to protective suits
+  protectionLevel?: string;
   protectionType?: string;
 }
 
