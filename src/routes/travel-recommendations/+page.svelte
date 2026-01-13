@@ -1,3 +1,4 @@
+<!-- src/routes/travel-recommendations/+page.svelte -->
 <script lang="ts">
   import type { TravelRecommendation } from '$lib/utils/travelFabrics';
   

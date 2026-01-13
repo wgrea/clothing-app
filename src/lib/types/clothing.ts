@@ -7,23 +7,28 @@ export interface ClothingItem {
   description: string;
   bestContexts: string[];
   
-  // NEW FIELDS to add:
-  brand?: string;                    // Brand/company name
+  // Existing fields...
+  brand?: string;
   priceRange?: '$' | '$$' | '$$$' | '$$$$';
   sustainability?: 'low' | 'medium' | 'high';
-  material?: string;                 // Primary material
+  material?: string;
   waterResistance?: 'None' | 'Light' | 'Medium' | 'High' | 'Waterproof';
   insulation?: 'None' | 'Light' | 'Medium' | 'Heavy';
   durability?: 'Low' | 'Medium' | 'High' | 'Very High';
   weight?: 'Light' | 'Medium' | 'Heavy';
-  seasonality?: string[];           // e.g., ["Spring", "Summer"]
-  features?: string[];              // e.g., ["Breathable", "Quick Dry"]
+  seasonality?: string[];
+  features?: string[];
   
   // Trend-related fields
-  trending?: boolean;               // Is this item trending?
-  trendingScore?: number;           // 1-10 popularity score
-  trendSeason?: string;             // e.g., "Spring 2024"
-  popularityChange?: 'up' | 'down' | 'stable'; // Trending direction
+  trending?: boolean;
+  trendingScore?: number;
+  trendSeason?: string;
+  popularityChange?: 'up' | 'down' | 'stable';
+  
+  // NEW: Distinguish between one-piece and regular
+  isOnePiece?: boolean;
+  season?: 'All' | 'Spring' | 'Summer' | 'Fall' | 'Winter';
+  trendingStyles?: string[];
 }
 
 export interface ClothingCategory {
@@ -33,32 +38,12 @@ export interface ClothingCategory {
   description?: string;
   tags?: string[];
   
-  // NEW: Category trends
-  trendingStyles?: string[];        // Popular styles in this category
+  // NEW: Distinguish between one-piece and regular
+  isOnePiece?: boolean;
   season?: 'All' | 'Spring' | 'Summer' | 'Fall' | 'Winter';
+  
+  // Category trends
+  trendingStyles?: string[];
 }
 
-// NEW: Brand/Company type
-export interface Brand {
-  id: string;
-  name: string;
-  description: string;
-  website?: string;
-  sustainabilityRating?: 1 | 2 | 3 | 4 | 5;
-  specialty?: string[];             // e.g., ["Outdoor", "Techwear", "Luxury"]
-  priceRange?: '$' | '$$' | '$$$' | '$$$$';
-  popularProducts?: string[];       // IDs of popular clothing items
-}
-
-// NEW: Trend type
-export interface Trend {
-  id: string;
-  name: string;
-  description: string;
-  season: string;                   // e.g., "Spring 2024"
-  categories: string[];             // Category IDs this trend applies to
-  featuredItems?: string[];         // Clothing item IDs
-  inspirationImages?: string[];     // URLs for trend images
-  colorPalette?: string[];          // Trend colors
-  materials?: string[];             // Trending materials
-}
+// Keep Brand and Trend interfaces the same...
