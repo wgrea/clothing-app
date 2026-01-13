@@ -7,7 +7,7 @@ export interface ClothingItem {
   description: string;
   bestContexts: string[];
   
-  // Existing fields...
+  // Optional fields
   brand?: string;
   priceRange?: '$' | '$$' | '$$$' | '$$$$';
   sustainability?: 'low' | 'medium' | 'high';
@@ -25,10 +25,19 @@ export interface ClothingItem {
   trendSeason?: string;
   popularityChange?: 'up' | 'down' | 'stable';
   
-  // NEW: Distinguish between one-piece and regular
+  // Type classification
   isOnePiece?: boolean;
   season?: 'All' | 'Spring' | 'Summer' | 'Fall' | 'Winter';
   trendingStyles?: string[];
+  
+  // Additional optional fields
+  sleeveLength?: 'short' | 'long' | 'sleeveless';
+  legLength?: 'short' | 'full';
+  isTravelSuitable?: boolean;
+  era?: 'vintage' | 'classic' | 'modern';
+  inspiredBy?: string;
+  costumeType?: string;
+  protectionType?: string;
 }
 
 export interface ClothingCategory {
@@ -37,13 +46,12 @@ export interface ClothingCategory {
   icon: string;
   description?: string;
   tags?: string[];
-  
-  // NEW: Distinguish between one-piece and regular
   isOnePiece?: boolean;
   season?: 'All' | 'Spring' | 'Summer' | 'Fall' | 'Winter';
-  
-  // Category trends
   trendingStyles?: string[];
 }
 
-// Keep Brand and Trend interfaces the same...
+// Helper type for categorized clothing data
+export type ClothingCategoryMap = {
+  [categoryId: string]: ClothingItem[];
+};

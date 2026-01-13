@@ -1,5 +1,4 @@
 <!-- src/routes/clothing/+page.svelte -->
-<!-- src/routes/clothing/+page.svelte -->
 <script lang="ts">
   import { clothingCategories } from '$lib/data/clothingCategories';
   import { clothingItems } from '$lib/data/clothingItems';
