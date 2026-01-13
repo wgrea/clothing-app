@@ -28,17 +28,18 @@
       <div class="flex">
         <!-- Logo -->
         <div class="shrink-0 flex items-center">
-          <a href="/" class="flex items-center">
+          <a href="/" class="flex items-center" data-sveltekit-prefetch>
             <span class="text-2xl mr-2">👕</span>
             <span class="text-xl font-bold text-gray-900">Fabric Guide</span>
           </a>
         </div>
-        
+
         <!-- Desktop Navigation Links -->
         <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
           <a 
             href="/" 
             class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+            data-sveltekit-prefetch
           >
             Home
           </a>
@@ -59,7 +60,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            
+
             <!-- Dropdown Menu -->
             {#if isCategoriesOpen}
               <div class="absolute z-10 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
@@ -69,6 +70,7 @@
                     href="/clothing" 
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-medium"
                     on:click={() => isCategoriesOpen = false}
+                    data-sveltekit-prefetch
                   >
                     👕 All Clothing Items
                   </a>
@@ -85,6 +87,7 @@
                       href="/clothing/{category.id}" 
                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       on:click={() => isCategoriesOpen = false}
+                      data-sveltekit-prefetch
                     >
                       <span class="mr-2">{category.icon}</span>
                       {category.name}
@@ -105,6 +108,7 @@
                       href="/clothing/{category.id}" 
                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       on:click={() => isCategoriesOpen = false}
+                      data-sveltekit-prefetch
                     >
                       <span class="mr-2">{category.icon}</span>
                       {category.name}
@@ -116,6 +120,7 @@
                       href="/clothing" 
                       class="block px-4 py-2 text-sm text-blue-600 hover:bg-gray-100 font-medium"
                       on:click={() => isCategoriesOpen = false}
+                      data-sveltekit-prefetch
                     >
                       View All Categories →
                     </a>
@@ -128,6 +133,7 @@
           <a 
             href="/fabrics" 
             class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+            data-sveltekit-prefetch
           >
             All Fabrics
           </a>
@@ -135,6 +141,7 @@
           <a 
             href="/compare" 
             class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+            data-sveltekit-prefetch
           >
             Compare
           </a>
@@ -143,6 +150,7 @@
           <a 
             href="/travel-recommendations" 
             class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+            data-sveltekit-prefetch
           >
             Travel Guide
           </a>
@@ -151,8 +159,17 @@
           <a 
             href="/combinations" 
             class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+            data-sveltekit-prefetch
           >
             Fabric Combos
+          </a>
+
+          <a 
+            href="/clothing/one-piece" 
+            class="border-transparent text-indigo-600 hover:border-indigo-300 hover:text-indigo-800 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+            data-sveltekit-prefetch
+          >
+            One-Piece Guide
           </a>
         </div>
       </div>
@@ -189,6 +206,7 @@
           href="/" 
           class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
           on:click={() => isMobileMenuOpen = false}
+          data-sveltekit-prefetch
         >
           Home
         </a>
@@ -203,6 +221,7 @@
               href="/clothing" 
               class="block pr-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
               on:click={() => isMobileMenuOpen = false}
+              data-sveltekit-prefetch
             >
               👕 All Clothing Items
             </a>
@@ -212,6 +231,7 @@
                 href="/clothing/{category.id}" 
                 class="block pr-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                 on:click={() => isMobileMenuOpen = false}
+                data-sveltekit-prefetch
               >
                 <span class="mr-2">{category.icon}</span>
                 {category.name}
@@ -222,6 +242,7 @@
               href="/clothing" 
               class="block pr-4 py-2 text-sm font-medium text-blue-600 hover:bg-gray-50"
               on:click={() => isMobileMenuOpen = false}
+              data-sveltekit-prefetch
             >
               View All Categories →
             </a>
@@ -232,6 +253,7 @@
           href="/fabrics" 
           class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
           on:click={() => isMobileMenuOpen = false}
+          data-sveltekit-prefetch
         >
           All Fabrics
         </a>
@@ -240,6 +262,7 @@
           href="/compare" 
           class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
           on:click={() => isMobileMenuOpen = false}
+          data-sveltekit-prefetch
         >
           Compare
         </a>
@@ -248,6 +271,7 @@
           href="/travel-recommendations" 
           class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
           on:click={() => isMobileMenuOpen = false}
+          data-sveltekit-prefetch
         >
           Travel Guide
         </a>
@@ -256,8 +280,18 @@
           href="/combinations" 
           class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
           on:click={() => isMobileMenuOpen = false}
+          data-sveltekit-prefetch
         >
           Fabric Combos
+        </a>
+
+        <a 
+          href="/clothing/one-piece" 
+          class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-indigo-600 hover:bg-indigo-50 hover:border-indigo-300"
+          on:click={() => isMobileMenuOpen = false}
+          data-sveltekit-prefetch
+        >
+          One-Piece Guide
         </a>
       </div>
     </div>
@@ -265,6 +299,13 @@
 </nav>
 
 <style>
+  /* KEEP ONLY ONE .text-indigo-600 rule */
+  /* Remove this empty one (or the first one if both are empty): */
+  .text-indigo-600 {
+    color: rgb(79 70 229); /* Keep this one if you want custom color */
+  }
+  
+  /* Keep your other styles: */
   .categories-dropdown .dropdown-enter {
     opacity: 0;
     transform: translateY(-10px);

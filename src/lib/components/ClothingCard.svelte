@@ -1,3 +1,4 @@
+<!-- src/lib/components/ClothingCard.svelte -->
 <script lang="ts">
   import type { ClothingItem } from '$lib/types/clothing';
   import { clothingCategories } from '$lib/data/clothingCategories';

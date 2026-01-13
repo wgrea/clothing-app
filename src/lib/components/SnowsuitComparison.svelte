@@ -1,3 +1,4 @@
+<!-- src/lib/components/SnowsuitComparison.svelte -->
 <script lang="ts">
   import type { ClothingItem } from '$lib/types/clothing';
   

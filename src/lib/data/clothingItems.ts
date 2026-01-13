@@ -2,32 +2,28 @@
 import type { ClothingItem } from '$lib/types/clothing';
 
 export const clothingItems: ClothingItem[] = [
-  // Existing items
+  // Jumpsuits Category
   {
     id: 'latex-catsuit',
     name: 'Latex Catsuit',
     category: 'jumpsuits',
     compatibleFabrics: ['latex', 'pvc'],
     description: 'Full-body form-fitting garment',
-    bestContexts: ['alternative-fashion', 'parties', 'costumes']
+    bestContexts: ['alternative-fashion', 'parties', 'costumes'],
+    
+    // NEW FIELDS:
+    brand: 'libidex',
+    priceRange: '$$$',
+    sustainability: 'low',
+    material: 'latex',
+    waterResistance: 'None',
+    durability: 'Medium',
+    weight: 'Light',
+    trending: true,
+    trendingScore: 7,
+    trendSeason: 'Spring 2024',
+    popularityChange: 'stable'
   },
-  {
-    id: 'denim-jacket', 
-    name: 'Denim Jacket',
-    category: 'jackets',
-    compatibleFabrics: ['denim', 'cotton'],
-    description: 'Classic casual outerwear',
-    bestContexts: ['casual', 'outdoor', 'concerts', 'everyday']
-  },
-  {
-    id: 'cotton-shirt',
-    name: 'Cotton T-Shirt',
-    category: 'shirts', 
-    compatibleFabrics: ['cotton', 'linen'],
-    description: 'Basic comfortable top',
-    bestContexts: ['casual', 'everyday', 'summer', 'travel']
-  },
-  
   // Water Suits Category
   {
     id: 'wetsuit',
@@ -35,7 +31,21 @@ export const clothingItems: ClothingItem[] = [
     category: 'water-suits',
     compatibleFabrics: ['neoprene', 'spandex'],
     description: 'Insulated suit for water sports and diving',
-    bestContexts: ['scuba-diving', 'surfing', 'water-sports', 'cold-water']
+    bestContexts: ['scuba-diving', 'surfing', 'water-sports', 'cold-water'],
+    
+    // NEW FIELDS:
+    brand: 'patagonia',
+    priceRange: '$$$',
+    sustainability: 'high',
+    material: 'neoprene',
+    waterResistance: 'Waterproof',
+    insulation: 'Medium',
+    durability: 'High',
+    weight: 'Medium',
+    trending: true,
+    trendingScore: 8,
+    trendSeason: 'Summer 2024',
+    popularityChange: 'up'
   },
   {
     id: 'drysuit',
@@ -54,7 +64,7 @@ export const clothingItems: ClothingItem[] = [
     bestContexts: ['surfing', 'swimming', 'snorkeling', 'water-park']
   },
   
-  // Snow Suits Category (different types)
+  // Snow Suits Category
   {
     id: 'insulated-snowsuit',
     name: 'Insulated Snowsuit',
@@ -94,6 +104,67 @@ export const clothingItems: ClothingItem[] = [
     compatibleFabrics: ['gore-tex', 'polyester', 'fleece'],
     description: 'Complete suit eliminating cold gaps',
     bestContexts: ['extreme-cold', 'childrens-wear', 'ski-patrol']
+  },
+  {
+    id: 'performance-race-suit',
+    name: 'Alpine Speed Racer Suit',
+    category: 'snow-suits',
+    brand: 'spyder',
+    compatibleFabrics: ['lycra', 'polyester-pique'],
+    description: 'Anatomically designed aerodynamic suit for competitive racing.',
+    bestContexts: ['ski-racing', 'slalom', 'speed-trials'],
+    priceRange: '$$$$',
+    sustainability: 'medium',
+    material: 'Micro-Pique Knit',
+    waterResistance: 'Light',
+    insulation: 'None',
+    durability: 'High',
+    weight: 'Light',
+    trending: false,
+    trendingScore: 5,
+    features: ['Aerodynamic', 'Grip-Elastic Hem', 'Removable Padding']
+  },
+  {
+    id: 'luxury-illusion-suit',
+    name: 'Sommet Belted One-Piece',
+    category: 'snow-suits',
+    brand: 'cordova',
+    compatibleFabrics: ['softshell', 'fleece', 'nylon'],
+    description: 'Bonded fleece-lined suit with a puffer-style top and sculpted trousers.',
+    bestContexts: ['après-ski', 'resort-skiing', 'winter-fashion'],
+    priceRange: '$$$$',
+    sustainability: 'medium',
+    material: 'Italian Bonded Fabric',
+    waterResistance: 'High',
+    insulation: 'Medium',
+    durability: 'Medium',
+    weight: 'Medium',
+    trending: true,
+    trendingScore: 9,
+    trendSeason: 'Winter 2025',
+    popularityChange: 'up',
+    features: ['Waterproof Membrane', '4-Way Stretch', 'Oversized Collar']
+  },
+  {
+    id: 'retro-puffer-suit',
+    name: 'The Neon Shredder',
+    category: 'snow-suits',
+    brand: 'tipsy-elves',
+    compatibleFabrics: ['polyester', 'synthetic-down'],
+    description: 'Bright 80s-inspired insulated jumpsuit with bold geometric patterns.',
+    bestContexts: ['themed-ski-days', 'snow-tubing', 'social-skiing'],
+    priceRange: '$$',
+    sustainability: 'low',
+    material: 'Polyester',
+    waterResistance: 'Medium',
+    insulation: 'Heavy',
+    durability: 'Medium',
+    weight: 'Heavy',
+    trending: true,
+    trendingScore: 8,
+    trendSeason: 'Winter 2024',
+    popularityChange: 'stable',
+    features: ['Hidden Pass Pocket', 'Waist Cinch', 'High Visibility']
   },
   
   // Protective Suits Category
@@ -216,7 +287,43 @@ export const clothingItems: ClothingItem[] = [
     bestContexts: ['multi-climate-travel', 'pack-light-travel', 'extended-trips']
   },
   
-  // Additional Everyday Items
+  // Shirts & Tops Category
+  {
+    id: 'cotton-shirt',
+    name: 'Cotton T-Shirt',
+    category: 'shirts',
+    compatibleFabrics: ['cotton', 'linen'],
+    description: 'Basic comfortable top',
+    bestContexts: ['casual', 'everyday', 'summer', 'travel']
+  },
+  {
+    id: 'merino-wool-base-layer',
+    name: 'Merino Wool Base Layer',
+    category: 'shirts',
+    compatibleFabrics: ['merino-wool'],
+    description: 'Temperature regulating undershirt',
+    bestContexts: ['hiking', 'travel', 'cold-weather', 'multi-day-trips']
+  },
+  
+  // Jackets & Outerwear Category
+  {
+    id: 'denim-jacket',
+    name: 'Denim Jacket',
+    category: 'jackets',
+    compatibleFabrics: ['denim', 'cotton'],
+    description: 'Classic casual outerwear',
+    bestContexts: ['casual', 'outdoor', 'concerts', 'everyday']
+  },
+  {
+    id: 'linen-blazer',
+    name: 'Linen Blazer',
+    category: 'jackets',
+    compatibleFabrics: ['linen'],
+    description: 'Lightweight summer jacket',
+    bestContexts: ['summer-weddings', 'smart-casual', 'tropical', 'business-casual']
+  },
+  
+  // Pants & Legwear Category
   {
     id: 'linen-pants',
     name: 'Linen Pants',
@@ -232,21 +339,5 @@ export const clothingItems: ClothingItem[] = [
     compatibleFabrics: ['corduroy'],
     description: 'Warm textured trousers',
     bestContexts: ['fall', 'winter', 'casual', 'vintage-style']
-  },
-  {
-    id: 'linen-blazer',
-    name: 'Linen Blazer',
-    category: 'jackets',
-    compatibleFabrics: ['linen'],
-    description: 'Lightweight summer jacket',
-    bestContexts: ['summer-weddings', 'smart-casual', 'tropical', 'business-casual']
-  },
-  {
-    id: 'merino-wool-base-layer',
-    name: 'Merino Wool Base Layer',
-    category: 'shirts',
-    compatibleFabrics: ['merino-wool'],
-    description: 'Temperature regulating undershirt',
-    bestContexts: ['hiking', 'travel', 'cold-weather', 'multi-day-trips']
   }
 ];
