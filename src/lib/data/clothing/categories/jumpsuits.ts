@@ -2,23 +2,30 @@
 import type { ClothingItem } from '$lib/types/clothing';
 
 export const jumpsuitsItems: ClothingItem[] = [
-  {
-    id: 'latex-catsuit',
-    name: 'Latex Catsuit',
+    {
+    id: 'denim-jumpsuit',
+    name: 'Denim Jumpsuit',
     category: 'jumpsuits',
-    compatibleFabrics: ['latex', 'pvc'],
-    description: 'Full-body form-fitting garment',
-    bestContexts: ['alternative-fashion', 'parties', 'costumes'],
-    brand: 'libidex',
-    priceRange: '$$$',
-    sustainability: 'low',
-    material: 'latex',
-    waterResistance: 'None',
-    durability: 'Medium',
+    compatibleFabrics: ['denim', 'cotton'],
+    description: 'Casual denim jumpsuit with utility pockets',
+    bestContexts: ['casual', 'workwear', 'urban'],
+    priceRange: '$$',
+    material: 'Denim',
+    weight: 'Medium',
+    isOnePiece: true,
+    trendingStyles: ['Workwear', 'Vintage']
+    },
+    {
+    id: 'linen-jumpsuit',
+    name: 'Linen Jumpsuit',
+    category: 'jumpsuits',
+    compatibleFabrics: ['linen', 'cotton'],
+    description: 'Breathable summer jumpsuit',
+    bestContexts: ['summer', 'beach', 'vacation'],
+    priceRange: '$$',
+    material: 'Linen',
     weight: 'Light',
-    trending: true,
-    trendingScore: 7,
-    trendSeason: 'Spring 2024',
-    popularityChange: 'stable'
-  }
+    isOnePiece: true,
+    season: 'Summer'
+    }
 ];

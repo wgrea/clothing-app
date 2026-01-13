@@ -1,16 +1,28 @@
-// src/lib/data/clothing/utils.ts
+// src/lib/data/clothing/utils.ts - SIMPLIFIED WORKING VERSION
 import type { ClothingItem } from '$lib/types/clothing';
 import {
   jumpsuitsItems,
   snowSuitsItems,
   waterSuitsItems,
-  protectiveSuitsItems,
   costumeSuitsItems,
+  costumeCharactersItems,
   raveSuitsItems,
   travelSuitsItems,
   shirtsItems,
   jacketsItems,
-  pantsItems
+  pantsItems,
+  shortsItems,
+  shoesItems,
+  accessoriesItems,
+  // Add these imports - they should work now:
+  modernHazmatSuits,
+  vintageHazmatSuits,
+  modernSpaceSuits,
+  vintageSpaceSuits,
+  modernRacingSuits,
+  vintageRacingSuits,
+  modernFlightSuits,
+  vintageFlightSuits,
 } from './categories';
 
 export const getAllClothingItems = (): ClothingItem[] => {
@@ -18,13 +30,25 @@ export const getAllClothingItems = (): ClothingItem[] => {
     ...jumpsuitsItems,
     ...snowSuitsItems,
     ...waterSuitsItems,
-    ...protectiveSuitsItems,
     ...costumeSuitsItems,
+    ...costumeCharactersItems,
     ...raveSuitsItems,
     ...travelSuitsItems,
     ...shirtsItems,
     ...jacketsItems,
-    ...pantsItems
+    ...pantsItems,
+    ...shortsItems,
+    ...shoesItems,
+    ...accessoriesItems,
+    // Add protective suits:
+    ...modernHazmatSuits,
+    ...vintageHazmatSuits,
+    ...modernSpaceSuits,
+    ...vintageSpaceSuits,
+    ...modernRacingSuits,
+    ...vintageRacingSuits,
+    ...modernFlightSuits,
+    ...vintageFlightSuits,
   ];
 };
 
@@ -35,32 +59,10 @@ export const getItemsByCategory = (categoryId: string): ClothingItem[] => {
 
 export const getOnePieceItems = (): ClothingItem[] => {
   const allItems = getAllClothingItems();
-  return allItems.filter(item => {
-    const categories = [
-      'jumpsuits', 
-      'snow-suits', 
-      'water-suits', 
-      'protective-suits', 
-      'costume-suits', 
-      'rave-suits', 
-      'travel-suits'
-    ];
-    return categories.includes(item.category);
-  });
+  return allItems.filter(item => item.isOnePiece === true);
 };
 
 export const getRegularItems = (): ClothingItem[] => {
   const allItems = getAllClothingItems();
-  return allItems.filter(item => {
-    const categories = [
-      'shirts', 
-      'jackets', 
-      'pants', 
-      'shorts', 
-      'shoes', 
-      'boots', 
-      'accessories'
-    ];
-    return categories.includes(item.category);
-  });
+  return allItems.filter(item => item.isOnePiece === false);
 };

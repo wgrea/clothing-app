@@ -12,6 +12,16 @@ export const clothingCategories: ClothingCategory[] = [
     isOnePiece: true,
     season: 'All'
   },
+  // CATSUITS (form-fitting fashion/performance)
+  {
+    id: 'catsuits',
+    name: 'Catsuits',
+    icon: '🐱',
+    description: 'Form-fitting full-body garments, often for fashion or performance',
+    tags: ['form-fitting', 'fashion', 'performance', 'skin-tight'],
+    isOnePiece: true,
+    season: 'All'
+  },
   {
     id: 'water-suits',  // Keep as is
     name: 'Water Suits',
@@ -45,6 +55,15 @@ export const clothingCategories: ClothingCategory[] = [
     icon: '🎭',
     description: 'Character and theatrical full-body costumes',
     tags: ['one-piece', 'costume', 'theatrical', 'character'],
+    isOnePiece: true,
+    season: 'All'
+  },
+  {
+    id: 'costume-characters',
+    name: 'Character Costumes',
+    icon: '🦸',
+    description: 'Specific character costumes from comics, movies, and games',
+    tags: ['cosplay', 'characters', 'superheroes', 'video-games', 'movies'],
     isOnePiece: true,
     season: 'All'
   },
